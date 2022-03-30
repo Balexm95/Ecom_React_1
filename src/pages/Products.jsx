@@ -1,88 +1,83 @@
-import React from 'react'
+import React from "react";
+import products from "../data/data";
+import { useState } from "react/cjs/react.development";
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/css/bootstrap.css'
+
 
 
 
 const Products = () => {
 
+    const[items, setItems] = useState(products);
+
+    const filterItem = (categItem) => {
+        const updatedItems = products.filter((curElem) => {
+            return curElem.category === categItem;
+        });
+
+        setItems(updatedItems);
+    }
     return (
+        <>
+            <br></br>
 
-        <div>
-            <h1 className="shop-title">Products</h1>
-            <div id ="buttons">
-                <button className = "button-value">All</button>
-                <button className = "button-value">Bands</button>
-                <button className = "button-value">classNameic Movies</button>
-                <button className = "button-value">classNameic Shows</button>
-                <button className = "button-value">Musicians</button>
-                <button className = "button-value">Culture</button>
 
+            <h1 className=" mt-5 shop-title">Products</h1>
+            <div className ="menu-tabs container">
+                <div className ="menu-tab d-flex justify-content-around">
+                    <button className = "btn btn-warning" onClick ={() => setItems(products)}>All</button>
+                    <button className = "btn btn-warning" onClick ={() => filterItem('Bands')}>Bands</button>
+                    <button className = "btn btn-warning"onClick ={() => filterItem('Classic Movies')} >Classic Movies</button>
+                    <button className = "btn btn-warning"onClick ={() => filterItem('Classic Shows')} >Classic Shows</button>
+                    <button className = "btn btn-warning"onClick ={() => filterItem('Musicians')} >Musicians</button>
+                    <button className = "btn btn-warning" onClick ={() => filterItem('Culture')}>Culture</button>
+                </div>
             </div>
-            <main className="contain">
-                <div>
-                    <img src="images/tshirt1.jpeg" className="items" alt="Mr.Happy Tee" />
-                    <p className="title">Love Mr. Happy Tee</p>
-                    <p>$40 <br></br><hr></hr><a className="button" href="/Cart">Add to Cart</a></p>
+            <div className= "menu-items d-flex justify-content-around container-fluid mt-5 ">
+                <div className ="row">
+                    <div className =" col-11 mx-auto">
+                        <div clasName="row my-5">
+                            {
+                                items.map((elem) => {
+                                    const{ id,productName,category, price, image } = elem;
+                                    return(
+                                        
+                                        <div className="item1 contain">
+                                        <div className="row Item-inside">
+                                           <div className = "col-12 col-md-12 col-lg-4 img-div">
+                                           <img src={image} alt="productPic" className ="img-fluid items "/>
+                                           </div> 
 
-
+                                            <div className = "row-12 col-md-12 col-lg-8 ">
+                                            
+                                               
+                                                <div className="main-title pt-4 pb-3">
+                                                    <h1 className="title">{productName}</h1>
+                                                    </div>
+                                                        <div className ="menu-price-book">
+                                                            <div className= "price-book-divide d-flex justify-content-between">
+                                                                <h2>${price}</h2>
+                                                                <a className="button btn btn-primary" href="/cart"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
+  <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+</svg>Add to Cart</a>
+                                                            </div>
+                                                </div>
+                                            </div>
+                                            </div>
+                                            </div> 
+                                            
+                                     
+ 
+                                    )
+                                })
+                            }
+                            
+                    </div>
                 </div>
-                <div>
-                    <img src="images/tshirt2.jpeg" className="items" alt="Grateful Dead Tee" />
-                    <p className="title">Grateful Dead Tie Dye Tee</p>
-                    <p>$45 <br></br><hr></hr><a className="button" href="/Cart">Add to Cart</a> </p>
-
-                </div>
-                <div>
-                    <img src="images/tshirt3.jpeg" className="items" alt="Tie Dye Tee" />
-                    <p className="title">DefLepard Tie Dye Tee</p>
-                    <p>$45 <br></br><hr></hr><a className="button" href="/Cart">Add to Cart</a> </p>
-                </div>
-                <div>
-                    <img src="images/tshirt4.jpeg" className="items" alt="Jimmy Hendrix" />
-                    <p className="title">Jimmy Hendrix Tee</p>
-                    <p>$40 <br></br><hr></hr><a className="button" href="/Cart">Add to Cart</a></p>
-                </div>
-                <div>
-                    <img src="images/tshirt5.jpeg" className="items" alt="Tune Squad" />
-                    <p className="title">Tune Squad Tee</p>
-                    <p>$40 <br></br><hr></hr><a className="button" href="/Cart">Add to Cart</a></p>
-                </div>
-                <div>
-                    <img src="images/tshirt6.jpeg" className="items" alt="Blondie Tee" />
-                    <p className="title">Blondie Tee</p>
-                    <p>$40 <br></br><hr></hr><a className="button" href="/Cart">Add to Cart</a></p>
-                </div>
-                <div>
-                    <img src="images/tshirt7.jpeg" className="items" alt="Jaws Tee" />
-                    <p className="title">Jaws Tee</p>
-                    <p>$40 <br></br><hr></hr><a className="button" href="/Cart">Add to Cart</a></p>
-                </div>
-                <div>
-                    <img src="images/tshirt8.jpeg" className="items" alt="Beatles Tees" />
-                    <p className="title">Beatles Tee</p>
-                    <p>$45 <br></br><hr></hr><a className="button" href="/Cart">Add to Cart</a> </p>
-                </div>
-                <div>
-                    <img src="images/tshirt9.jpeg" className="items" alt="Whitney Houston Tee" />
-                    <p className="title">Whitney Houston Tee</p>
-                    <p>$45 <br></br><hr></hr><a className="button" href="/Cart">Add to Cart</a> </p>
-                </div>
-                <div>
-                    <img src="images/tshirt10.jpeg" className="items" alt="Lisa Simpson Tee" />
-                    <p className="title">Lisa Simpson Tee</p>
-                    <p>$35 <br></br><hr></hr><a className="button" href="/Cart">Add to Cart</a></p>
-                </div>
-                <div>
-                    <img src="images/tshirt11.jpeg" className="items" alt="Woodstock Tee" />
-                    <p className="title">Woodstock Tee</p>
-                    <p>$35 <br></br><hr></hr><a className="button" href="/Cart">Add to Cart</a></p>
-                </div>
-                <div>
-                    <img src="images/tshirt12.jpeg" className="items" alt="Rose Distressed Tee" />
-                    <p className="title">Rose Distressed Tee</p>
-                    <p>$40 <br></br><hr></hr><a className="button" href="/Cart">Add to Cart</a></p>
-                </div>
-            </main>
-        </div>
-    )
-}
+           </div>
+           </div>
+        </>
+    );
+};
 export default Products;

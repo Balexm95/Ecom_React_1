@@ -32,40 +32,28 @@ const Home = () => {
             width="1508"
           /> */}
         </main>
-        <div className ="sale-card">
-        <div className="row">
-          <div className="col-sm-6">
-          <div className="card">
-          
-              <div className="card-body">
-                <h5 className="card-title">SALE!</h5>
-                <p className="card-text">Don't miss out on this Sale</p>
-                <p>Shop clearance and sale clothing at American Eagle Outfitters to find your new favorite styles. Shop sale items including men's and women's tops, jeans.</p>
-                
-                
-              </div>
-            </div>
-          </div>
-          <div className="col-sm-6">
-            <div className="card">
-            
-              <div className="card-body">
-                <h5 className="card-title">SHOP NOW!</h5>
-                <p className="card-text">
-                If you are looking for a good deal on your next outfit, take a look at VINTEES online sale. Take 30-50% off your favorite clothes, shoes and accessories.
-                </p>
-               <p>Shop clearance and sale clothing at VINTEES to find your new favorite styles. Shop sale items including men's and women's tops, jeans.</p>
-               
-                </div>
-                </div>
-              </div>
-            </div>
-            <div className= "slider-container">
-                
-           
-            
-          </div>
-          </div>
+        <div className = "card-container">
+        <div className="card">
+  <div className="card-header">
+    Featured
+  </div>
+  <div className="card-body">
+    <h5 className="card-title">Special title treatment</h5>
+    <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    <a href="/products" className="btn btn-primary">Shop!</a>
+  </div>
+</div>
+<div className="card">
+  <div className="card-header">
+    Featured
+  </div>
+  <div className="card-body">
+    <h5 className="card-title">Special title treatment</h5>
+    <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    <a href="/products" className="btn btn-primary">Shop!</a>
+  </div>
+</div>
+</div>
           
      
     </>

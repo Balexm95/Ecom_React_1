@@ -1,46 +1,31 @@
-import React from 'react'
+import React, {Component} from 'react'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'font-awesome/css/font-awesome.min.css'
 
 
 
 
-
-const Navbar = () =>{
-
+const Navbar = () => {
     
   return (
 
    <>
-   <nav className="navbar navbar-expand-lg navbar-light bg-light">
-    <div className="container">
-    
-      <a className="navbar-brand fw-bold fs-4" href="/">VINTEES</a>
-      <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span className="navbar-toggler-icon"></span>
-      </button>
-    
-      <div className="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
-          <li className="nav-item">
-            <a className="nav-link active" aria-current="page" href="/">Home</a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="/products">Products</a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="/contact">Contact</a>
-          </li>
-    
-        </ul>
-        <form className="d-flex">
-          <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-          <button className="btn btn-outline-success" type="submit">Search</button>
-        </form>
-        <a href = "/cart" className = "btn btn ms-2"> 
-        <i class="fa-solid fa-bag-shopping"></i>Cart (0)</a>
-       </div>
-      </div>
+  <nav className="navbar">
+    <a href="/" className ="logo"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-intersect" viewBox="0 0 16 16">
+  <path d="M0 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2h2a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2H2a2 2 0 0 1-2-2V2zm5 10v2a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1h-2v5a2 2 0 0 1-2 2H5zm6-8V2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h2V6a2 2 0 0 1 2-2h5z"/>
+</svg> VINTEES</a>
+    <input className= "menu-btn" type="checkbox" id="menu-btn"/>
+    <label className ="menu-icon" for ="menu-btn"><span className="nav-icon"></span></label>
+    <ul className="menu">
+      <li><a href ="/">Home</a></li>
+      <li><a href ="/products">Products</a></li>
+      <li><a href ="/contact">Contact Us</a></li>
+      <button><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
+  <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+</svg><a href ="/cart">  Cart(0)</a></button>
       
-  </nav> 
+    </ul>
+</nav>
   </>
   );
 };

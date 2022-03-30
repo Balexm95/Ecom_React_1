@@ -1,4 +1,5 @@
-
+import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css';
 import Navbar from './component/Navbar';
 import Home from './pages/Home';
@@ -6,7 +7,8 @@ import Footer from './component/Footer';
 import Products from './pages/Products';
 import Contact from './pages/Contact';
 import Cart from './component/Cart';
-
+import 'font-awesome/css/font-awesome.min.css'
+import 'bootstrap/dist/css/bootstrap.css'
 
 
   
@@ -34,9 +36,10 @@ function App() {
        <Route path = "/cart" element = {<Cart/>}></Route>
     
      </Routes>
-
+           
      </>
      <Footer/>
+     
     </Router>
   );
 }
